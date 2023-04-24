@@ -1,15 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Build Your Own Portfolio (BYOP)
+
+For Citrus Hack 2023.
 
 ## Getting Started
 
-First, run the development server:
+Ensure you have the following installed:
+
+- [NodeJS](https://nodejs.dev/en/)
+    - NPM package manager will be installed with it.
+- [Yarn Package Manager](https://yarnpkg.com/)
+    - Optional but I prefer it over NPM.
+- [Code Editor](https://code.visualstudio.com/)
+
+After the above steps have been completed, clone the project locally.
+
+Then, run the development server:
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
-pnpm dev
+yarn run dev / yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
