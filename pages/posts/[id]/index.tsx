@@ -2,7 +2,7 @@ import { getAllPostIds, getPostData } from "@/lib/posts";
 import { format } from "date-fns";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 
-export default function Post(props: { postData: Post }) {
+export default function Post(props: { postData: Post }): JSX.Element {
   return (
     <>
       {props.postData.title}

@@ -4,6 +4,9 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 
+/**
+ * Returns the directory of all the posts.
+ */
 const postsDirectory = path.join(process.cwd(), "posts");
 
 export function getSortedPostsData() {
@@ -34,18 +37,51 @@ export function getSortedPostsData() {
   });
 }
 
-export function getAllPostIds() {
+/**
+ * Reads all filenames in the `posts` directory and returns
+ * a list of all post ids with `.md` stripped.
+ *
+ * @returns {{ params: {id: string} }[]}
+ */
+export function getAllPostIds(): { params: { id: string } }[] {
   const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames.map((fileName) => {
+
+  /**
+   * Formats the string array returned from
+   * fileNames into the correct format required
+   * by getStaticPaths.
+   *
+   * @param {string} fileName - The name of the file.
+   * @returns {{ params: {id: string} }}
+   * @example
+   * ```
+   * [
+   *    {
+   *        params: {
+   *            id: "blog-1";
+   *        }
+   *    }
+   * ]
+   * ```
+   */
+  const format = (fileName: string): { params: { id: string } } => {
     return {
       params: {
         id: fileName.replace(/\.md$/, ""),
       },
     };
-  });
+  };
+
+  return fileNames.map(format);
 }
 
-export async function getPostData(id: string) {
+/**
+ * Returns the post data including all metadata and content.
+ *
+ * @param {string} id - The slug of the post.
+ * @returns {Promise<Post>}
+ */
+export async function getPostData(id: string): Promise<Post> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

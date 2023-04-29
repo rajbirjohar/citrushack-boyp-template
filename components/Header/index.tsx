@@ -1,7 +1,12 @@
 import Link from "next/link";
 import css from "./styles.module.css";
 
-export default function Header() {
+/**
+ * The main header used for navigating between the pages.
+ * 
+ * @returns {JSX.Element}
+ */
+export default function Header(): JSX.Element {
   return (
     <header className={css.header}>
       <nav className={css.nav}>

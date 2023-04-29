@@ -3,7 +3,9 @@ import css from "./styles.module.css";
 import Link from "next/link";
 import { format } from "date-fns";
 
-export default function Posts(props: { allPostsData: Metadata[] }) {
+export default function Posts(props: {
+  allPostsData: Metadata[];
+}): JSX.Element {
   return (
     <>
       <h1>Posts</h1>
