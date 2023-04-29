@@ -209,6 +209,8 @@
 html,
 body {
   height: 100%;
+  background-color: var(--bg);
+  color: var(--fg);
 }
 /*
   Typographic tweaks!
@@ -251,6 +253,30 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-hover);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-fg);
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  border-radius: var(--radius);
+  padding: 0 var(--space);
+}
+
+button:hover {
+  background-color: var(--button-bg-hover);
+  color: var(--button-fg-hover);
+}
+
 /*
   9. Create a root stacking context
 */

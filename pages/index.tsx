@@ -35,6 +35,7 @@ export default function Home(): JSX.Element {
       </Head>
 
       {/* Edit below this line and watch the magic happen. In real time 😎. */}
+      <h1>Hello Citrus Hack!</h1>
     </>
   );
 }
