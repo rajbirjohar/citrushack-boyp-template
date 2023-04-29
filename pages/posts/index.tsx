@@ -6,26 +6,7 @@ import { format } from "date-fns";
 export default function Posts(props: {
   allPostsData: Metadata[];
 }): JSX.Element {
-  return (
-    <>
-      <h1>Posts</h1>
-      <ul className={css.list}>
-        {props.allPostsData.map((post) => (
-          <li className={css.item} key={post.id}>
-            <Link href={`/posts/${post.id}`}>{post.title}</Link>
-            <time>{format(new Date(post.date), "MM/dd/yyyy")}</time>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  return <></>;
 }
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData: JSON.parse(JSON.stringify(allPostsData)),
-    },
-  };
-}
+export async function getStaticProps() {}
