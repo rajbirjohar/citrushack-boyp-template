@@ -261,6 +261,22 @@ a {
 a:hover {
   color: var(--link-hover);
 }
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-fg);
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  border-radius: var(--radius);
+  padding: 0 var(--space);
+}
+
+button:hover {
+  background-color: var(--button-bg-hover);
+  color: var(--button-fg-hover);
+}
+
 /*
   9. Create a root stacking context
 */
